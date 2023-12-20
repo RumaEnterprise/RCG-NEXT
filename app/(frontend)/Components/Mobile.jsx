@@ -392,7 +392,7 @@ const Mobile = () => {
         <Button ref={btnRef} colorScheme="#20295a" onClick={mobileOnOpen}>
           <IoMdMenu size="26px" />
         </Button>
-        <Image id={"logo"} src={RCG_logo} h={"50px"} alt="logo" />
+        <Image id={"logo"} src={"https://api.rarecombee.com/admin/image?name=RCG_logo.png"} h={"50px"} alt="logo" />
       </Flex>
       <Drawer
         isOpen={mobileIsOpen}
