@@ -489,6 +489,7 @@ const Mobile = () => {
                 />
                 <Box onClick={() => handleLoginCheck("orders")}>
                   <MobileNavCard
+                  link={""}
                     icon={FiPackage}
                     text={"My Orders"}
                     close={mobileOnClose}
@@ -498,6 +499,7 @@ const Mobile = () => {
 
                 <Box onClick={() => handleLoginCheck("cart")}>
                   <MobileNavCard
+                  link={""}
                     icon={FaShoppingCart}
                     text={"My Cart"}
                     close={mobileOnClose}
@@ -506,6 +508,7 @@ const Mobile = () => {
                 </Box>
                 <Box onClick={() => handleLoginCheck("wishlist")}>
                   <MobileNavCard
+                  link={""}
                     icon={AiTwotoneHeart}
                     text={"My Wishlist"}
                     close={mobileOnClose}
@@ -514,6 +517,7 @@ const Mobile = () => {
                 </Box>
                 <Box onClick={() => handleLoginCheck("profile")}>
                   <MobileNavCard
+                  link={""}
                     icon={FaUser}
                     text={"My Account"}
                     close={mobileOnClose}
@@ -551,7 +555,7 @@ const Mobile = () => {
                 />
               </Box>
               <Box>
-                <Link to={"/contact"}>
+                <Link href={"/contact"}>
                   <Flex
                     p={"10px"}
                     pl={"17px"}
