@@ -27,6 +27,7 @@ import {
   userGetProduct,
 } from "../../Redux/AppReducer/Action";
 import { categoryList, colorList } from "../../universal_variable";
+import Head from 'next/head';
 import { capitalizeWords } from "../../Components/capital";
 import ProductCard from "../../Components/ProductCard";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -116,6 +117,9 @@ const User = () => {
   }
   return (
     <Box>
+      <Head>
+        <title>Rare Combee Group Products</title>
+      </Head>
       <Image
         loading="eager"
         title="banner"

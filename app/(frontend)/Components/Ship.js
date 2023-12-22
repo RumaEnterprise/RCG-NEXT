@@ -4,7 +4,7 @@ import { envia_origin } from "../universal_variable";
 const getStateByPin = async (pinCode) => {
   try {
     const res = await axios.get(
-      `${process.env.REACT_APP_BACKEND_URL}/pincode?pin=${pinCode}`
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/pincode?pin=${pinCode}`
     );
     const stateCodes = {
       "ANDAMAN AND NICOBAR ISLANDS": "AN",
@@ -109,11 +109,11 @@ const getQuote = async (zip, finalPrice, pload) => {
         pload.shipment.carrier = ele;
 
         const response = await axios.post(
-          `${process.env.REACT_APP_ENVIA_API}/ship/rate?carrier=${ele}`,
+          `${process.env.NEXT_PUBLIC_ENVIA_API}/ship/rate?carrier=${ele}`,
           pload, // Use pload instead of payload
           {
             headers: {
-              Authorization: `Bearer ${process.env.REACT_APP_ENVIA_KEY}`,
+              Authorization: `Bearer ${process.env.NEXT_PUBLIC_ENVIA_KEY}`,
             },
           }
         );
@@ -223,12 +223,12 @@ const generateLabel = async (data) => {
     options.shipment.carrier = quoteData.data.carrier;
     options.shipment.service = quoteData.data.service;
     const response = await axios.post(
-      `${process.env.REACT_APP_ENVIA_API}/ship/generate`,
+      `${process.env.NEXT_PUBLIC_ENVIA_API}/ship/generate`,
       options,
       {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${process.env.REACT_APP_ENVIA_KEY}`,
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_ENVIA_KEY}`,
         },
       }
     );
@@ -240,12 +240,12 @@ const generateLabel = async (data) => {
 const initiateCancelOrder = async (payload) => {
   try {
     const response = await axios.post(
-      `${process.env.REACT_APP_ENVIA_API}/ship/cancel`,
+      `${process.env.NEXT_PUBLIC_ENVIA_API}/ship/cancel`,
       payload,
       {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${process.env.REACT_APP_ENVIA_KEY}`,
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_ENVIA_KEY}`,
         },
       }
     );
