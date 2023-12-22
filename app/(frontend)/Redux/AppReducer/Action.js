@@ -370,10 +370,11 @@ const updateLikesDislikes = (payload) => (dispatch) => {
 };
 const userGetProduct = (payload) => (dispatch) => {
   try {
+    dispatch({ type: types.GET_PRODUCTS_REQUEST });
     axios
       .get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/product?${payload.filter}`)
       .then((res) => {
-        dispatch({ type: types.GET_USER_PRODUCT, payload: res.data });
+        dispatch({ type: types.GET_USER_PRODUCT_SUCCESS, payload: res.data });
       })
       .catch((err) => {
         console.log(err);

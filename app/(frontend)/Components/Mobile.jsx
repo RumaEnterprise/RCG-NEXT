@@ -326,7 +326,12 @@ const Mobile = () => {
                       />
                     </InputGroup>
                   </FormControl>
-                  <Flex direction={"column"} gap={"5px"} justifyContent={"space-between"} mt="2%">
+                  <Flex
+                    direction={"column"}
+                    gap={"5px"}
+                    justifyContent={"space-between"}
+                    mt="2%"
+                  >
                     <Button
                       fontSize={"14px"}
                       fontWeight={"600"}
@@ -392,7 +397,12 @@ const Mobile = () => {
         <Button ref={btnRef} colorScheme="#20295a" onClick={mobileOnOpen}>
           <IoMdMenu size="26px" />
         </Button>
-        <Image id={"logo"} src={"https://api.rarecombee.com/admin/image?name=RCG_logo.png"} h={"50px"} alt="logo" />
+        <Image
+          id={"logo"}
+          src={"https://api.rarecombee.com/admin/image?name=RCG_logo.png"}
+          h={"50px"}
+          alt="logo"
+        />
       </Flex>
       <Drawer
         isOpen={mobileIsOpen}
@@ -409,7 +419,8 @@ const Mobile = () => {
                 <BsPersonCircle />
               </Center>
               <Center>
-                <Text cursor={"pointer"}
+                <Text
+                  cursor={"pointer"}
                   fontSize={"16px"}
                   onClick={
                     user.name === undefined
@@ -489,7 +500,7 @@ const Mobile = () => {
                 />
                 <Box onClick={() => handleLoginCheck("orders")}>
                   <MobileNavCard
-                  link={""}
+                    link={""}
                     icon={FiPackage}
                     text={"My Orders"}
                     close={mobileOnClose}
@@ -499,7 +510,7 @@ const Mobile = () => {
 
                 <Box onClick={() => handleLoginCheck("cart")}>
                   <MobileNavCard
-                  link={""}
+                    link={""}
                     icon={FaShoppingCart}
                     text={"My Cart"}
                     close={mobileOnClose}
@@ -508,7 +519,7 @@ const Mobile = () => {
                 </Box>
                 <Box onClick={() => handleLoginCheck("wishlist")}>
                   <MobileNavCard
-                  link={""}
+                    link={""}
                     icon={AiTwotoneHeart}
                     text={"My Wishlist"}
                     close={mobileOnClose}
@@ -517,7 +528,7 @@ const Mobile = () => {
                 </Box>
                 <Box onClick={() => handleLoginCheck("profile")}>
                   <MobileNavCard
-                  link={""}
+                    link={""}
                     icon={FaUser}
                     text={"My Account"}
                     close={mobileOnClose}

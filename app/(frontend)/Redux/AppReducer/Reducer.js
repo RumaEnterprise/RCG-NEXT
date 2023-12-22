@@ -270,10 +270,17 @@ export const Reducer = (state = initialState, { type, payload }) => {
         magnifier: false,
       };
     }
-    case types.GET_USER_PRODUCT: {
+    case types.GET_USER_PRODUCT_REQUEST: {
+      return {
+        ...state,
+        isProductLoading:true
+      };
+    }
+    case types.GET_USER_PRODUCT_SUCCESS: {
       return {
         ...state,
         userProduct: payload,
+        isProductLoading:false
       };
     }
     case types.OLDURL: {
