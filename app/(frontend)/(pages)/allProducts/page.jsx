@@ -27,7 +27,7 @@ import {
   userGetProduct,
 } from "../../Redux/AppReducer/Action";
 import { categoryList, colorList } from "../../universal_variable";
-import Head from 'next/head';
+import Head from "next/head";
 import { capitalizeWords } from "../../Components/capital";
 import ProductCard from "../../Components/ProductCard";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -67,16 +67,18 @@ const User = () => {
     const param = searchParams.get(name);
     const allParams = window.location.href.split("?")?.[1]?.split("&") || [];
     if (name == "price") {
-      const filter = allParams
-        .filter(
-          (ele) =>
-            ele.split("=")[0] !== "minPrice" || ele.split("=")[0] !== "maxPrice"
-        )
-        .join("&");
-      navigate.push(`?${filter}`);
+      let filter = allParams
+        .map((ele) => {
+          if (ele.includes("minPrice") || ele.includes("maxPrice")) {
+            return;
+          } else {
+            return ele;
+          }
+        })
+        .filter((ele) => ele !== undefined);
+      navigate.push(`?${filter.join("&")}`);
     } else if (param) {
       const filter = allParams.filter((ele) => ele.split("=")[0] !== name);
-
       navigate.push(
         `?${filter.length == 1 ? filter.join("") : filter.join("&")}`
       );
@@ -86,17 +88,25 @@ const User = () => {
     const allParams = window.location.href.split("?")?.[1]?.split("&") || [];
     if (name == "price") {
       const [minPrice, maxPrice] = value.split("-");
-      const filter = allParams
-        .filter(
-          (ele) =>
-            ele.split("=")[0] !== "minPrice" || ele.split("=")[0] !== "maxPrice"
-        )
-        .join("&");
-      navigate.push(`?${filter}&minPrice=${minPrice}&maxPrice=${maxPrice}`);
-    } else {
-      const filter = allParams.filter((ele) => ele.split("=")[0] !== name);
+      let filter = allParams
+        .map((ele) => {
+          if (ele.includes("minPrice") || ele.includes("maxPrice")) {
+            return;
+          } else {
+            return ele;
+          }
+        })
+        .filter((ele) => ele !== undefined);
+
       navigate.push(
-        `?${filter}${filter.length <= 1 ? "" : "&"}${name}=${value}`
+        `?${filter.join("&")}${
+          filter.length >= 1 ? "&" : ""
+        }minPrice=${minPrice}&maxPrice=${maxPrice}`
+      );
+    } else {
+      const filter = allParams.filter((ele) => !ele.includes(name));
+      navigate.push(
+        `?${filter.join("&")}${filter.length >= 1 ? "&" : ""}${name}=${value}`
       );
     }
   };

@@ -1,23 +1,15 @@
-"use client";
-import { ChakraProvider } from "@chakra-ui/react";
-import { Provider } from "react-redux";
-import { persistedStore, store } from "../Redux/store";
-import { PersistGate } from "redux-persist/integration/react";
-import Footer from "../Components/Footer";
-import Top from "./Top";
+import Render from "./Render";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <title>Home | Rare combee Group</title>
+        <link rel="icon" href="https://api.rarecombee.com/admin/image?name=RCG_logo.png"/>
+        <link rel="canonical" href='/' />
+        <meta name="robots" content="all"/>
+      </head>
       <body>
-          <Provider store={store}>
-            <PersistGate persistor={persistedStore}>
-              <ChakraProvider>
-                <Top />
-                {children}
-                <Footer />
-              </ChakraProvider>
-            </PersistGate>
-          </Provider>
+        <Render children={children} />
       </body>
     </html>
   );

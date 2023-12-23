@@ -20,7 +20,6 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 const Footer = () => {
-  console.log(foot_bar)
   const [hide, setHide] = useState(false);
   const navigate = useRouter();
   const category = [

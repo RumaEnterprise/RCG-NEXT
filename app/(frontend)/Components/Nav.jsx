@@ -786,7 +786,7 @@ const Nav = () => {
           {category.map(({ name, link }, i) => {
             return (
               <Center key={i}>
-                <Link href={link}>
+                <Link href={link||""}>
                   <Box fontWeight={"bold"} _hover={{ fontWeight: "bold" }}>
                     {name}
                   </Box>
@@ -853,7 +853,7 @@ const Nav = () => {
                   ) : (
                     <Box>
                       <Box borderTop={"5px solid #0a093d"} color={"black"}>
-                        <Link to={"/allProducts"}>
+                        <Link href={"/allProducts"}>
                           <MenuItem
                             p={"10px 0px"}
                             pl={"10px"}
@@ -869,7 +869,7 @@ const Nav = () => {
                             </Flex>
                           </MenuItem>
                         </Link>
-                        <Link to={"/orders"}>
+                        <Link href={"/orders"}>
                           <MenuItem
                             p={"10px 0px"}
                             pl={"10px"}
@@ -885,7 +885,7 @@ const Nav = () => {
                             </Flex>
                           </MenuItem>
                         </Link>
-                        <Link to={"/cart"}>
+                        <Link href={"/cart"}>
                           <MenuItem
                             p={"10px 0px"}
                             pl={"10px"}
@@ -901,7 +901,7 @@ const Nav = () => {
                             </Flex>
                           </MenuItem>
                         </Link>
-                        <Link to={"/wishlist"}>
+                        <Link href={"/wishlist"}>
                           <MenuItem
                             p={"10px 0px"}
                             pl={"10px"}
@@ -917,7 +917,7 @@ const Nav = () => {
                             </Flex>
                           </MenuItem>
                         </Link>
-                        <Link to={"/profile"}>
+                        <Link href={"/profile"}>
                           <MenuItem
                             p={"10px 0px"}
                             pl={"10px"}
@@ -991,7 +991,7 @@ const Nav = () => {
                                   </Box>
                                 </Center>
                                 <Box w={"50px"}>
-                                  <Link to={`/allProducts/single/${el.skuID}`}>
+                                  <Link href={`/allProducts/single/${el.skuID}`||""}>
                                     <Image
                                       border={"1px solid gray"}
                                       h={"50px"}
@@ -1002,19 +1002,19 @@ const Nav = () => {
                               </Flex>
                             </Td>
                             <Td>
-                              <Link to={`/allProducts/single/${el.skuID}`}>
+                              <Link href={`/allProducts/single/${el.skuID}`}>
                                 <Center>
                                   <Text cursor={"pointer"}>{tempText}</Text>
                                 </Center>
                               </Link>
                             </Td>
                             <Td>
-                              <Link to={`/allProducts/single/${el.skuID}`}>
+                              <Link href={`/allProducts/single/${el.skuID}`}>
                                 <Center cursor={"pointer"}>{el.price}</Center>
                               </Link>
                             </Td>
                             <Td>
-                              <Link to={`/allProducts/single/${el.skuID}`}>
+                              <Link href={`/allProducts/single/${el.skuID}`}>
                                 <Center>
                                   {el.quantity <= 0 ? (
                                     <Text color={"red"} cursor={"pointer"}>
