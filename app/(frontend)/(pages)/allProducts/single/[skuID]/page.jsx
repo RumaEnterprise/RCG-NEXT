@@ -182,7 +182,7 @@ const SingleProduct = () => {
       dispatch(loginState(toast));
     } else {
       dispatch(buyNow([payload]));
-      navigate(`/cart/${skuID}`);
+      navigate.push(`/cart/${skuID}`);
     }
   };
   const handleCart = (second = false) => {
