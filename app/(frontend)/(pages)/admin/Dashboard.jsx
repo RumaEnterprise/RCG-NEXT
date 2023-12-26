@@ -160,7 +160,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
       {LinkItems.map((link) => {
         return (
           <Center key={link.name}>
-            <Link href={link.url||""}>
+            <Link href={link.url||""} shallow>
               <Box
                 p={"20px 0px"}
                 w={"200px"}
@@ -275,10 +275,10 @@ const MobileNav = ({ onOpen, ...rest }) => {
               borderColor={useColorModeValue("gray.200", "gray.700")}
               zIndex={"999"}
             >
-              <Link href={"/admin/profile"}>
+              <Link href={"/admin/profile"} shallow>
                 <MenuItem>Profile</MenuItem>
               </Link>
-              <Link href={"/admin/settings"}>
+              <Link href={"/admin/settings"} shallow>
                 <MenuItem>Settings</MenuItem>
               </Link>
               <MenuDivider />
