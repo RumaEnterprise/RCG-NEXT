@@ -186,9 +186,9 @@ const User = () => {
                   value={searchParams.get("category") || ""}
                 >
                   <SimpleGrid gap={"7px"} columns={"1"} direction="column">
-                    {categoryList.map(({ name }) => {
+                    {categoryList.map(({ name },i) => {
                       return (
-                        <Radio border={"1px solid black"} value={name}>
+                        <Radio border={"1px solid black"} value={name}key={i}>
                           {capitalizeWords(name)}
                         </Radio>
                       );
@@ -231,10 +231,10 @@ const User = () => {
                   value={searchParams.get("color") || ""}
                 >
                   <SimpleGrid gap={"7px"} columns={"2"} direction="column">
-                    {colorList.map(({ name, code }) => {
+                    {colorList.map(({ name, code },i) => {
                       const value = name.split(" ").join("");
                       return (
-                        <Radio border={"1px solid black"} value={value}>
+                        <Radio border={"1px solid black"} value={value} key={i}>
                           <Flex gap={"5px"}>
                             <Center>
                               <Box
@@ -548,7 +548,7 @@ const User = () => {
                 i
               ) => {
                 return (
-                  <ProductCard
+                  <ProductCard key={i}
                     plike={like}
                     pdislike={dislike}
                     title={title}

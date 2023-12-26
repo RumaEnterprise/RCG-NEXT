@@ -352,9 +352,9 @@ const Coupons = () => {
           </tr>
         </thead>
         <tbody>
-          {coupons?.map((ele) => {
+          {coupons?.map((ele,i) => {
             return (
-              <tr>
+              <tr key={i}>
                 <td w={"150px"}>
                   <Flex gap={"10px"}>
                     <Checkbox

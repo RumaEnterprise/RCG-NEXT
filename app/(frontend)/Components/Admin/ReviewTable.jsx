@@ -74,12 +74,12 @@ const ReviewTable = ({ reviewData, filter, token, getAllReview }) => {
           {reviewData?.map((ele) => {
             return (
               <>
-                {ele.productReview.map((el) => {
+                {ele.productReview.map((el,i) => {
                   if (el.status !== filter) {
                     return null;
                   }
                   return (
-                    <Tr fontSize={"13px"}>
+                    <Tr fontSize={"13px"} key={i}>
                       <Td>
                         <Center>
                           <Image

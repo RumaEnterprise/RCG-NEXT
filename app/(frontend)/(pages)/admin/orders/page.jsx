@@ -692,8 +692,8 @@ const PurchaseAdmin = () => {
         onChange={(e) => handleTab(e)}
       >
         <TabList>
-          {orderList.map((el) => {
-            return <Tab>{el.name}</Tab>;
+          {orderList.map((el,i) => {
+            return <Tab key={i}>{el.name}</Tab>;
           })}
         </TabList>
         <TabIndicator
@@ -703,7 +703,7 @@ const PurchaseAdmin = () => {
           borderRadius="1px"
         />
         <TabPanels>
-          {orderList.map((ele) => {
+          {orderList.map((ele,i) => {
             let temp = [...purchase];
             let newData;
             if (num === 6) {
@@ -737,7 +737,7 @@ const PurchaseAdmin = () => {
               return dateB - dateA;
             });
             return (
-              <TabPanel>
+              <TabPanel key={i}>
                 <Box
                   overflow={"scroll"}
                   overflowX="hidden"
@@ -796,7 +796,7 @@ const PurchaseAdmin = () => {
                             <>
                               {products.map((prod, j) => {
                                 return (
-                                  <Tr>
+                                  <Tr key={j}>
                                     <Td style={{ padding: "0.5rem" }}>
                                       <Flex
                                         gap={"4px"}

@@ -192,10 +192,10 @@ const ProductReurn = ({
             </tr>
           </thead>
           <tbody>
-            {newData.map((ele) => {
+            {newData.map((ele,i) => {
               const linkto = `/admin/orders/single/${ele.cartID}`;
               return (
-                <tr>
+                <tr key={i}>
                   <td>
                     <Center>
                       <Link to={linkto} target="_blank">

@@ -1269,9 +1269,9 @@ const SingleProduct = () => {
               </Button>
             </Center>
           </Flex>
-          {product?.productReview?.map((ele) => {
+          {product?.productReview?.map((ele,i) => {
             if (ele.status == "accept") {
-              return <ReviewCard data={ele} />;
+              return <ReviewCard data={ele} key={i} />;
             }
           })}
         </Box>

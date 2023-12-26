@@ -252,9 +252,10 @@ const ProductReport = () => {
                   </thead>
                   <tbody>
                     {previewData.length > 0 &&
-                      previewData.map((ele) => {
+                      previewData.map((ele, i) => {
                         return (
                           <tr
+                            key={i}
                             style={{
                               color:
                                 ele.quantity >= 10
@@ -273,7 +274,8 @@ const ProductReport = () => {
                           >
                             <td>
                               <Center>
-                                <Box cursor={"pointer"}
+                                <Box
+                                  cursor={"pointer"}
                                   onClick={() => {
                                     setFullImage(ele.image.text);
                                     onFullImageOpen();
@@ -345,7 +347,7 @@ const ProductReport = () => {
             </Thead>
             <Tbody>
               {list.length > 0 &&
-                list.map((ele) => {
+                list.map((ele, i) => {
                   const time = ele.split("_").splice(2);
                   const finalTime = `${time[0]} | ${time[1]
                     .split("-")
@@ -353,6 +355,7 @@ const ProductReport = () => {
                     .join(":")}${time[2].split(".")[0]}`;
                   return (
                     <SingleReport
+                      key={i}
                       ele={ele}
                       finalTime={finalTime}
                       handleDownloadProductReport={handleDownloadProductReport}

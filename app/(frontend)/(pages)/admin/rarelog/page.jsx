@@ -35,7 +35,7 @@ const Log = () => {
       <Box>
         {
           userLog.map((el,i)=>(
-            <Text mb={"20px"} textAlign={"left"}>{i+1}.{el}</Text>
+            <Text key={i} mb={"20px"} textAlign={"left"}>{i+1}.{el}</Text>
           ))
         }
       </Box>

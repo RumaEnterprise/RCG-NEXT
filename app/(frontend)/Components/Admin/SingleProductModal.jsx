@@ -15,7 +15,7 @@ import {
   Center,
 } from "@chakra-ui/react";
 import { capitalizeWords } from "../capital";
-const SingleProductModal = ({ data, isOpen, onClose }) => {  
+const SingleProductModal = ({ data, isOpen, onClose }) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose} size={"lg"}>
       <ModalOverlay />
@@ -30,9 +30,10 @@ const SingleProductModal = ({ data, isOpen, onClose }) => {
         <ModalBody>
           <Flex gap={"10px"} direction={["column", "column", "row", "row"]}>
             <SimpleGrid gap={"10px"} columns={[1, 1, 2, 2]} w={"50%"}>
-              {data?.images?.map((elem) => {
+              {data?.images?.map((elem, i) => {
                 return (
                   <Image
+                    key={i}
                     borderRadius={"10px"}
                     border={`1px solid ${data?.data?.color}`}
                     src={elem.data}
@@ -98,8 +99,8 @@ const SingleProductModal = ({ data, isOpen, onClose }) => {
               <Flex gap={"5px"} mt={"10px"}>
                 <Text fontWeight={"bold"}>Uploaded By:</Text>
                 <Text>
-                  {capitalizeWords(data?.data?.createdBy?.name)} ({data?.data?.createdBy?.date} |{" "}
-                  {data?.data?.createdBy?.time})
+                  {capitalizeWords(data?.data?.createdBy?.name)} (
+                  {data?.data?.createdBy?.date} | {data?.data?.createdBy?.time})
                 </Text>
               </Flex>
               <Flex gap={"5px"} mt={"10px"}>

@@ -974,10 +974,10 @@ const Product = () => {
                   border={"1px solid black"}
                 >
                   <option hidden>Color</option>
-                  {colorList.map(({ name }) => {
+                  {colorList.map(({ name },i) => {
                     const value = name.split(" ").join("");
                     return (
-                      <option value={value}>{capitalizeWords(name)}</option>
+                      <option key={i} value={value}>{capitalizeWords(name)}</option>
                     );
                   })}
                 </Select>
@@ -1001,10 +1001,10 @@ const Product = () => {
                     border={"1px solid black"}
                   >
                     <option hidden>Category</option>
-                    {categoryList.map(({ name }) => {
+                    {categoryList.map(({ name },i) => {
                       const value = name.split(" ").join("");
                       return (
-                        <option value={value}>{capitalizeWords(name)}</option>
+                        <option key={i} value={value}>{capitalizeWords(name)}</option>
                       );
                     })}
                   </Select>
@@ -1306,10 +1306,10 @@ const Product = () => {
                 </Tooltip>
                 <Select ref={color} defaultValue={SKU[0]?.color}>
                   <option hidden>Select Color</option>
-                  {colorList.map(({ name }) => {
+                  {colorList.map(({ name },i) => {
                     const value = name.split(" ").join("");
                     return (
-                      <option value={value}>{capitalizeWords(name)}</option>
+                      <option key={i} value={value}>{capitalizeWords(name)}</option>
                     );
                   })}
                 </Select>
@@ -1329,10 +1329,10 @@ const Product = () => {
                 <Tooltip label={"Category"}>
                   <Select ref={category} defaultValue={SKU[0]?.category}>
                     <option hidden>Select Category</option>
-                    {categoryList.map(({ name }) => {
+                    {categoryList.map(({ name },i) => {
                       const value = name.split(" ").join("");
                       return (
-                        <option value={value}>{capitalizeWords(name)}</option>
+                        <option key={i} value={value}>{capitalizeWords(name)}</option>
                       );
                     })}
                   </Select>
@@ -1689,7 +1689,7 @@ const Product = () => {
                     Number(price) - Number(price) * (Number(discount) / 100)
                   ).toFixed(0);
                   return (
-                    <tr style={{ borderBottom: "0.5px solid black" }}>
+                    <tr style={{ borderBottom: "0.5px solid black" }} key={index}>
                       <td>
                         <Flex
                           gap={"5px"}
