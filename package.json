@@ -49,7 +49,7 @@
     "react-share": "^4.4.1",
     "react-slick": "^0.29.0",
     "react-transition-group": "^4.4.5",
-    "reactjs-social-login": "^2.6.2",
+    "reactjs-social-login": "^2.6.3",
     "recharts": "^2.1.9",
     "redux": "^4.2.1",
     "redux-persist": "^6.0.0",
