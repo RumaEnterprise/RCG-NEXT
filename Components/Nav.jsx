@@ -44,7 +44,7 @@ import { BiPackage, BiLogOutCircle } from "react-icons/bi";
 import React, { useEffect, useRef, useState } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import RCG_logo from "../Resources/RCG_logo.png";
-import { LoginSocialGoogle } from "reactjs-social-login";
+// import { LoginSocialGoogle } from "reactjs-social-login";
 import { FaUser, FaShoppingCart } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { FiSearch } from "react-icons/fi";
@@ -60,6 +60,7 @@ import { ResetPassword, onPasswordResetOpen } from "./ResetPassword";
 import OtpInput from "react-otp-input";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { GoogleLogin } from "@react-oauth/google";
 const VerifyOtp = () => {
   const [otp, setOtp] = useState("");
   const handleOtpChange = (otpValue) => {
@@ -434,7 +435,7 @@ const Nav = () => {
           top={110}
           bgColor={"white"}
           borderRadius={"7px"}
-          hidden={searchData.length <= 0 }
+          hidden={searchData.length <= 0}
         >
           {searchData?.map((ele, i) => {
             return (
@@ -570,35 +571,19 @@ const Nav = () => {
                             SIGN IN
                           </Button>
 
-                          {window&&<LoginSocialGoogle
-                            client_id={process.env.NEXT_PUBLIC_GG_APP_ID || ""}
-                            redirect_uri={"https://www.rarecombee.com"}
-                            scope="openid profile email"
-                            discoveryDocs="claims_supported"
-                            access_type="offline"
-                            onResolve={(e) => handleGoogle(e)}
-                            onReject={(err) => {
-                              console.log(err);
-                            }}
-                          >
-                            <Button
-                              fontSize={"14px"}
-                              fontWeight={"600"}
-                              loadingText="Accessing..."
-                              isLoading={load}
-                              w={"100%"}
-                              size="lg"
-                              border={"1px solid blue"}
-                              _hover={{
-                                bg: "blue.500",
-                                color: "white",
-                                border: "none",
+                          <Center>
+                          {window && (
+                            <GoogleLogin
+                              onSuccess={(credentialResponse) => {
+                                console.log(credentialResponse);
+                                handleGoogle(credentialResponse)
                               }}
-                            >
-                              <FcGoogle />
-                              &nbsp; Signin with Google
-                            </Button>
-                          </LoginSocialGoogle>}
+                              onError={() => {
+                                console.log("Login Failed");
+                              }}
+                            />
+                          )}
+                          </Center>
                         </Stack>
                       </Stack>
                     </Box>
@@ -786,7 +771,7 @@ const Nav = () => {
           {category.map(({ name, link }, i) => {
             return (
               <Center key={i}>
-                <Link href={link||""}>
+                <Link href={link || ""}>
                   <Box fontWeight={"bold"} _hover={{ fontWeight: "bold" }}>
                     {name}
                   </Box>
@@ -991,7 +976,11 @@ const Nav = () => {
                                   </Box>
                                 </Center>
                                 <Box w={"50px"}>
-                                  <Link href={`/allProducts/single/${el.skuID}`||""}>
+                                  <Link
+                                    href={
+                                      `/allProducts/single/${el.skuID}` || ""
+                                    }
+                                  >
                                     <Image
                                       border={"1px solid gray"}
                                       h={"50px"}
