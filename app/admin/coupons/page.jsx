@@ -22,8 +22,8 @@ import { getAllCoupon } from "../../../Redux/AppReducer/Action";
 import { AddIcon, ChevronDownIcon, DeleteIcon } from "@chakra-ui/icons";
 import { AiOutlineCloudUpload } from "react-icons/ai";
 import axios from "axios";
-import Loading from "../../../../../Components/Loading";
-import Refresh from "../../../../../Components/Admin/Refresh";
+import Loading from "../../../Components/Loading";
+import Refresh from "../../../Components/Admin/Refresh";
 const Coupons = () => {
   const dispatch = useDispatch();
   const loading = useSelector((store) => store.app.isCouponLoading);

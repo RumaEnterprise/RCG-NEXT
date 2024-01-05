@@ -25,7 +25,7 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import { useSelector } from "react-redux";
-import ReviewTable from "../../../../../Components/Admin/ReviewTable";
+import ReviewTable from "../../../Components/Admin/ReviewTable";
 const Review = () => {
   const [reviewData, setReviewData] = useState([]);
   const token = useSelector((store) => store.auth.token);

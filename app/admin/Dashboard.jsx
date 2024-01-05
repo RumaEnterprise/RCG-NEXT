@@ -44,7 +44,7 @@ import RCG_logo from "../../Resources/RCG_logo.png";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "./../../Redux/AuthReducer/Action";
 import { useState } from "react";
-import { capitalizeWords } from "../../../../Components/capital";
+import { capitalizeWords } from "../../Components/capital";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 

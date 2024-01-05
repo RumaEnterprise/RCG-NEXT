@@ -32,7 +32,7 @@ import React, { useEffect, useState } from "react";
 import Dashboard from "../Dashboard";
 import { useSelector } from "react-redux";
 import axios from "axios";
-import { capitalizeWords } from "../../../../../Components/capital";
+import { capitalizeWords } from "../../../Components/capital";
 const SingleReport = ({
   ele,
   finalTime,

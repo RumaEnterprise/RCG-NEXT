@@ -42,11 +42,11 @@ import { useSelector } from "react-redux";
 import { IoMdDownload } from "react-icons/io";
 import { GrNext, GrPrevious } from "react-icons/gr";
 import { FiSearch } from "react-icons/fi";
-import Refresh from "../../../../../Components/Admin/Refresh";
-import Loading from "../../../../../Components/Loading";
-import { capitalizeWords } from "../../../../../Components/capital";
-import { currentDate, currentTime } from "../../../../../Components/currentDate";
-import { initiateCancelOrder } from "../../../../../Components/Ship";
+import Refresh from "../../../Components/Admin/Refresh";
+import Loading from "../../../Components/Loading";
+import { capitalizeWords } from "../../../Components/capital";
+import { currentDate, currentTime } from "../../../Components/currentDate";
+import { initiateCancelOrder } from "../../../Components/Ship";
 import { useRouter } from "next/navigation";
 const PurchaseAdmin = () => {
   let searchID;

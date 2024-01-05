@@ -24,7 +24,7 @@ import {
 } from "@chakra-ui/react";
 import { capitalizeWords } from "../capital";
 import { useDispatch } from "react-redux";
-import { updateProduct } from "../../app/(frontend)/Redux/AppReducer/Action";
+import { updateProduct } from "../../Redux/AppReducer/Action";
 const ReviewTable = ({ reviewData, filter, token, getAllReview }) => {
   const dispatch = useDispatch();
   const toast = useToast();

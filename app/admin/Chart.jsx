@@ -13,7 +13,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import Loading from "../../../../Components/Loading";
+import Loading from "../../Components/Loading";
 const Chart = () => {
   const [data, setData] = useState([]);
   const token = useSelector((store) => store.auth.token);

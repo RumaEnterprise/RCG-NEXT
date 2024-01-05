@@ -47,11 +47,11 @@ import {
   updateProduct,
 } from "../../../Redux/AppReducer/Action";
 import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
-import Loading from "../../../../../Components/Loading.jsx";
-import SingleProductModal from "../../../../../Components/Admin/SingleProductModal";
+import Loading from "../../../Components/Loading.jsx";
+import SingleProductModal from "../../../Components/Admin/SingleProductModal";
 import { FiSearch } from "react-icons/fi";
-import { capitalizeWords } from "../../../../../Components/capital";
-import Refresh from "../../../../../Components/Admin/Refresh";
+import { capitalizeWords } from "../../../Components/capital";
+import Refresh from "../../../Components/Admin/Refresh";
 import { MdClose } from "react-icons/md";
 import { getAllCourier } from "../../../Redux/ShipReducer/Action.js";
 import Link from "next/link";

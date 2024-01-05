@@ -32,13 +32,13 @@ import {
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { AddIcon, DeleteIcon, EditIcon } from "@chakra-ui/icons";
-import CustomAlert from "../../../../../Components/CustomAlert";
+import CustomAlert from "../../../Components/CustomAlert";
 import { FiSearch } from "react-icons/fi";
 import { GrFormNextLink, GrFormPreviousLink } from "react-icons/gr";
 import { searchProduct } from "../../../Redux/AppReducer/Action";
-import { capitalizeWords } from "../../../../../Components/capital";
-import Refresh from "../../../../../Components/Admin/Refresh";
-import Loading from "../../../../../Components/Loading";
+import { capitalizeWords } from "../../../Components/capital";
+import Refresh from "../../../Components/Admin/Refresh";
+import Loading from "../../../Components/Loading";
 
 const UserList = () => {
   const dispatch = useDispatch();
