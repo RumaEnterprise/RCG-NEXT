@@ -4,6 +4,7 @@ import {
   Button,
   Center,
   Flex,
+  Image,
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
@@ -16,7 +17,6 @@ import RCG_logo from "../Resources/RCG_logo.png";
 import ruma from "../Resources/ruma.png";
 import { SignupOpen } from "../Redux/AppReducer/Action";
 import { useDispatch } from "react-redux";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 const Footer = () => {
@@ -355,50 +355,58 @@ const Footer = () => {
               Social Media
             </Text>
             <SimpleGrid columns={[2, 2, 2, 1]} gap={"10px"} color={"white"}>
-              <a href="https://www.facebook.com/Ruma-Enterprise-109959944608602/">
-                <Flex letterSpacing={"1px"}>
-                  <Center>
-                    <Box bgColor={"blue"} borderRadius={"50%"} p={"5px"}>
-                      <FaFacebookF />
-                    </Box>
-                    &nbsp; Facebook
-                  </Center>
-                </Flex>
-              </a>
-              <a href="https://www.instagram.com/rumaenterprise/">
-                <Flex letterSpacing={"1px"}>
-                  <Center>
-                    <Box bgColor={"purple"} borderRadius={"50%"} p={"5px"}>
-                      <FaInstagram />
-                    </Box>
-                    &nbsp; Instagram
-                  </Center>
-                </Flex>
-              </a>
-              <a href="https://www.instagram.com/rumaenterprise/">
-                <Flex letterSpacing={"1px"}>
-                  <Center>
-                    <Box bgColor={"#54abed"} borderRadius={"50%"} p={"5px"}>
-                      <RiTwitterFill />
-                    </Box>
-                    &nbsp; Twitter
-                  </Center>
-                </Flex>
-              </a>
-              <a href="https://www.instagram.com/rumaenterprise/">
-                <Flex letterSpacing={"1px"}>
-                  <Center>
-                    <Box
-                      bgColor={"rgb(10, 102, 194);"}
-                      borderRadius={"50%"}
-                      p={"5px"}
-                    >
-                      <FaLinkedinIn />
-                    </Box>
-                    &nbsp; LinkedIn
-                  </Center>
-                </Flex>
-              </a>
+              <Box _hover={{ paddingLeft: "10px" }}>
+                <a href="https://www.facebook.com/Ruma-Enterprise-109959944608602/">
+                  <Flex letterSpacing={"1px"}>
+                    <Center>
+                      <Box bgColor={"blue"} borderRadius={"50%"} p={"5px"}>
+                        <FaFacebookF />
+                      </Box>
+                      &nbsp; Facebook
+                    </Center>
+                  </Flex>
+                </a>
+              </Box>
+              <Box _hover={{ paddingLeft: "10px" }}>
+                <a href="https://www.instagram.com/rumaenterprise/">
+                  <Flex letterSpacing={"1px"}>
+                    <Center>
+                      <Box bgColor={"purple"} borderRadius={"50%"} p={"5px"}>
+                        <FaInstagram />
+                      </Box>
+                      &nbsp; Instagram
+                    </Center>
+                  </Flex>
+                </a>
+              </Box>
+              <Box _hover={{ paddingLeft: "10px" }}>
+                <a href="https://www.instagram.com/rumaenterprise/">
+                  <Flex letterSpacing={"1px"}>
+                    <Center>
+                      <Box bgColor={"#54abed"} borderRadius={"50%"} p={"5px"}>
+                        <RiTwitterFill />
+                      </Box>
+                      &nbsp; Twitter
+                    </Center>
+                  </Flex>
+                </a>
+              </Box>
+              <Box _hover={{ paddingLeft: "10px" }}>
+                <a href="https://www.instagram.com/rumaenterprise/">
+                  <Flex letterSpacing={"1px"}>
+                    <Center>
+                      <Box
+                        bgColor={"rgb(10, 102, 194);"}
+                        borderRadius={"50%"}
+                        p={"5px"}
+                      >
+                        <FaLinkedinIn />
+                      </Box>
+                      &nbsp; LinkedIn
+                    </Center>
+                  </Flex>
+                </a>
+              </Box>
             </SimpleGrid>
           </Box>
         </SimpleGrid>
@@ -408,11 +416,11 @@ const Footer = () => {
           gap={["0px", "0px", "10px", "10px"]}
         >
           <Image
-            height={80}
-            width={80}
+            height={"80px"}
+            width={"80px"}
             loading="eager"
             title={"logo"}
-            src={RCG_logo}
+            src={RCG_logo.src}
             alt={"logo"}
             htmlWidth={"auto"}
             htmlHeight={"80px"}
@@ -429,12 +437,11 @@ const Footer = () => {
               <Image
                 htmlWidth={"auto"}
                 htmlHeight={"40px"}
-                height={130}
-                width={130}
+                height={"40px"}
                 loading="eager"
                 title={"ruma"}
                 alt={"ruma"}
-                src={ruma}
+                src={ruma.src}
               />
             </a>
           </Flex>
